@@ -7,6 +7,7 @@ const markdownInput = document.getElementById('markdownInput');
 const fileInput = document.getElementById('fileInput');
 const pasteBtn = document.getElementById('pasteBtn');
 const clearBtn = document.getElementById('clearBtn');
+const exampleBtn = document.getElementById('exampleBtn');
 const convertTxtBtn = document.getElementById('convertTxt');
 const convertWordBtn = document.getElementById('convertWord');
 const convertHtmlBtn = document.getElementById('convertHtml');
@@ -39,6 +40,39 @@ fileInput.addEventListener('change', (e) => {
         };
         reader.readAsText(file);
     }
+});
+
+// 示例内容功能
+exampleBtn.addEventListener('click', () => {
+    const exampleMarkdown = `# AI生成内容示例
+
+这是一个**Markdown格式**的示例内容，展示了AI工具生成的内容格式。
+
+## 主要特点
+
+- 支持多种格式转换
+- 一键去除Markdown语法
+- 保留格式转换为Word文档
+
+### 使用场景
+
+1. **内容分享**：将AI生成的内容分享到微信、QQ
+2. **文档制作**：转换为Word文档，更专业
+3. **格式整理**：去除语法，只保留纯文本
+
+> 这是一个引用示例，展示引用格式的转换效果。
+
+**粗体文本** 和 *斜体文本* 都会被正确处理。
+
+\`代码片段\` 也会被正确转换。
+
+---
+
+现在试试转换这个示例内容，看看效果如何！`;
+    
+    markdownInput.value = exampleMarkdown;
+    markdownInput.focus();
+    showNotification('✅ 已加载示例内容');
 });
 
 // 清空功能

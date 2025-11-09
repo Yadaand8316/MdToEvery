@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="将AI生成的Markdown转换为TXT、Word等格式，方便分享">
+    <title>Markdown转换工具 - MD转TXT/Word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Markdown转换工具</h1>
+            <p class="subtitle">将AI生成的Markdown转换为TXT、Word等格式，方便分享</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>输入Markdown内容</h2>
+                    <div class="action-buttons">
+                        <button id="pasteBtn" class="btn btn-secondary" aria-label="粘贴剪贴板内容">
+                            <span>粘贴</span>
+                        </button>
+                        <label for="fileInput" class="btn btn-secondary" aria-label="上传文件">
+                            <span>上传文件</span>
+                        </label>
+                        <input type="file" id="fileInput" accept=".md,.markdown,.txt" style="display: none;" aria-label="选择文件">
+                        <button id="clearBtn" class="btn btn-secondary" aria-label="清空内容">
+                            <span>清空</span>
+                        </button>
+                    </div>
+                </div>
+                <textarea id="markdownInput" placeholder="在这里粘贴或输入Markdown内容...&#10;&#10;例如：&#10;# 标题&#10;**粗体文本**&#10;- 列表项1&#10;- 列表项2"></textarea>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <h2>转换结果</h2>
+                    <div class="format-buttons">
+                        <button id="convertTxt" class="btn btn-primary" aria-label="转换为TXT格式">
+                            <span>转TXT</span>
+                        </button>
+                        <button id="convertWord" class="btn btn-primary" aria-label="转换为Word格式">
+                            <span>转Word</span>
+                        </button>
+                        <button id="convertHtml" class="btn btn-primary" aria-label="转换为HTML格式">
+                            <span>转HTML</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="output-container">
+                    <div id="outputPreview" class="output-preview"></div>
+                    <textarea id="outputText" class="output-text" readonly placeholder="转换结果将显示在这里..."></textarea>
+                </div>
+                <div class="download-section">
+                    <button id="downloadBtn" class="btn btn-success" style="display: none;" aria-label="下载转换后的文件">
+                        <span>下载文件</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>提示：支持粘贴Markdown内容或上传.md文件，转换后可直接下载分享</p>
+        </footer>
+    </div>
+
+    <!-- 引入必要的库 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

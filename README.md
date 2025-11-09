@@ -2,6 +2,9 @@
 
 一个简单易用的Web工具，将AI生成的Markdown内容转换为TXT、Word等格式，方便分享。
 
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
 🌐 **在线访问**：[https://riverxue.github.io/MdToEvery/](https://riverxue.github.io/MdToEvery/)
 
 ## 💡 解决什么问题？
@@ -125,6 +128,10 @@ MIT License - 自由使用和修改
 
 - 🔗 在线地址：https://riverxue.github.io/MdToEvery/
 - ⭐ GitHub：https://github.com/RiverXue/MdToEvery
+
+## 🏷️ 相关标签
+
+`markdown` `converter` `ai-tools` `chatgpt` `word-converter` `markdown-to-word` `markdown-to-txt` `web-tool` `frontend` `javascript`
 
 ---
 

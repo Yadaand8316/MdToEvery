@@ -23,14 +23,14 @@
                     <h2>输入Markdown内容</h2>
                     <div class="action-buttons">
                         <button id="pasteBtn" class="btn btn-secondary" aria-label="粘贴剪贴板内容">
-                            <span>粘贴</span>
+                            <span>📋 粘贴</span>
                         </button>
                         <label for="fileInput" class="btn btn-secondary" aria-label="上传文件">
-                            <span>上传文件</span>
+                            <span>📁 上传</span>
                         </label>
                         <input type="file" id="fileInput" accept=".md,.markdown,.txt" style="display: none;" aria-label="选择文件">
                         <button id="clearBtn" class="btn btn-secondary" aria-label="清空内容">
-                            <span>清空</span>
+                            <span>🗑️ 清空</span>
                         </button>
                     </div>
                 </div>
@@ -57,9 +57,14 @@
                     <textarea id="outputText" class="output-text" readonly placeholder="转换结果将显示在这里..."></textarea>
                 </div>
                 <div class="download-section">
-                    <button id="downloadBtn" class="btn btn-success" style="display: none;" aria-label="下载转换后的文件">
-                        <span>下载文件</span>
-                    </button>
+                    <div class="action-buttons-group" style="display: none;" id="actionButtonsGroup">
+                        <button id="copyBtn" class="btn btn-secondary" aria-label="复制转换结果">
+                            <span>📋 复制</span>
+                        </button>
+                        <button id="downloadBtn" class="btn btn-success" aria-label="下载转换后的文件">
+                            <span>⬇️ 下载</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </main>

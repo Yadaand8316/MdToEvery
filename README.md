@@ -4,6 +4,12 @@
 
 🌐 **在线访问**：[https://riverxue.github.io/MdToEvery/](https://riverxue.github.io/MdToEvery/)
 
+## 💡 解决什么问题？
+
+**痛点**：使用ChatGPT、Claude、文心一言等AI工具时，生成的内容都是Markdown格式。直接复制分享到微信、QQ、邮件时，会显示大量Markdown语法（`**粗体**`、`# 标题`等），很不美观。
+
+**解决方案**：一键将Markdown转换为纯文本或Word文档，分享更专业、更美观！
+
 ## ✨ 功能特点
 
 - 🔄 **Markdown转TXT**：去除所有Markdown语法，生成纯文本文件
@@ -58,10 +64,22 @@
 
 ## 🎯 适用场景
 
-- ✅ AI生成的Markdown内容需要分享给他人
-- ✅ 需要去除Markdown语法，只保留纯文本
-- ✅ 需要将Markdown转换为Word文档
-- ✅ 需要快速预览Markdown渲染效果
+- ✅ **AI内容分享**：ChatGPT/Claude生成的内容分享到微信、QQ、邮件
+- ✅ **文档转换**：将AI生成的报告转换为Word文档，更专业
+- ✅ **去除语法**：去除Markdown语法，只保留纯文本，更易读
+- ✅ **格式预览**：快速预览Markdown渲染效果
+- ✅ **内容整理**：将AI对话内容整理成正式文档
+
+## 📱 使用场景示例
+
+### 场景1：AI对话内容分享
+从ChatGPT复制内容 → 粘贴到工具 → 转TXT → 分享到微信（纯文本，无语法）
+
+### 场景2：制作正式文档
+AI生成报告 → 转Word → 下载 → 在Word中进一步编辑
+
+### 场景3：内容整理
+AI对话记录 → 转HTML → 保存为网页 → 分享给团队
 
 ## 💡 技术说明
 
@@ -85,6 +103,14 @@
 - Safari
 - 移动端浏览器
 
+## 🌟 为什么选择这个工具？
+
+- 🚀 **完全免费**：无需注册，无需付费
+- ⚡ **即开即用**：打开网页就能用，无需安装
+- 📱 **全平台支持**：手机、电脑都能用
+- 🔒 **隐私安全**：纯前端处理，数据不上传服务器
+- 🎨 **界面美观**：苹果风格设计，使用体验好
+
 ## 📄 许可证
 
 MIT License - 自由使用和修改
@@ -92,6 +118,13 @@ MIT License - 自由使用和修改
 ## 🤝 贡献
 
 欢迎提交Issue和Pull Request！
+
+## 📢 分享给朋友
+
+如果这个工具对你有帮助，欢迎分享给需要的朋友！
+
+- 🔗 在线地址：https://riverxue.github.io/MdToEvery/
+- ⭐ GitHub：https://github.com/RiverXue/MdToEvery
 
 ---
 

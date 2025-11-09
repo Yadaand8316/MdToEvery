@@ -13,6 +13,8 @@ const convertHtmlBtn = document.getElementById('convertHtml');
 const outputPreview = document.getElementById('outputPreview');
 const outputText = document.getElementById('outputText');
 const downloadBtn = document.getElementById('downloadBtn');
+const copyBtn = document.getElementById('copyBtn');
+const actionButtonsGroup = document.getElementById('actionButtonsGroup');
 
 // 粘贴功能
 pasteBtn.addEventListener('click', async () => {
@@ -46,7 +48,7 @@ clearBtn.addEventListener('click', () => {
     outputPreview.innerHTML = '';
     outputText.classList.remove('active');
     outputPreview.classList.remove('active');
-    downloadBtn.style.display = 'none';
+    actionButtonsGroup.style.display = 'none';
     currentOutput = '';
     currentFormat = '';
     showNotification('🗑️ 已清空');
@@ -114,7 +116,7 @@ convertTxtBtn.addEventListener('click', () => {
         outputText.value = text;
         outputText.classList.add('active');
         outputPreview.classList.remove('active');
-        downloadBtn.style.display = 'block';
+        actionButtonsGroup.style.display = 'flex';
         
         showNotification('✅ 已转换为TXT格式');
     } catch (error) {
@@ -277,9 +279,9 @@ convertWordBtn.addEventListener('click', async () => {
         outputText.value = previewText.substring(0, 500) + (previewText.length > 500 ? '...' : '');
         outputText.classList.add('active');
         outputPreview.classList.remove('active');
-        downloadBtn.style.display = 'block';
+        actionButtonsGroup.style.display = 'flex';
         
-        showNotification('✅ 已转换为Word格式，点击下载');
+        showNotification('✅ 已转换为Word格式');
     } catch (error) {
         console.error('Word转换错误:', error);
         // 如果docx库失败，使用HTML转Word的备用方案
@@ -307,8 +309,8 @@ ${html}
             outputText.value = markdown.replace(/[#*`\[\]()]/g, '').trim().substring(0, 500);
             outputText.classList.add('active');
             outputPreview.classList.remove('active');
-            downloadBtn.style.display = 'block';
-            showNotification('✅ 已转换为Word格式（.doc），点击下载');
+            actionButtonsGroup.style.display = 'flex';
+            showNotification('✅ 已转换为Word格式（.doc）');
         } catch (fallbackError) {
             showNotification('❌ Word转换失败: ' + error.message, 'error');
         }
@@ -331,7 +333,7 @@ convertHtmlBtn.addEventListener('click', () => {
         outputPreview.innerHTML = html;
         outputPreview.classList.add('active');
         outputText.classList.remove('active');
-        downloadBtn.style.display = 'block';
+        actionButtonsGroup.style.display = 'flex';
         
         showNotification('✅ 已转换为HTML格式');
     } catch (error) {
@@ -422,6 +424,63 @@ function downloadFile(blob, fileName) {
         }
     }
 }
+
+// 复制功能
+copyBtn.addEventListener('click', async () => {
+    if (!currentOutput) {
+        showNotification('⚠️ 没有可复制的内容', 'error');
+        return;
+    }
+
+    try {
+        let textToCopy = '';
+        
+        if (currentFormat === 'txt') {
+            // TXT格式：直接复制文本
+            textToCopy = currentOutput;
+        } else if (currentFormat === 'html') {
+            // HTML格式：复制HTML代码
+            textToCopy = currentOutput;
+        } else if (currentFormat === 'docx' || currentFormat === 'doc') {
+            // Word格式：复制预览文本
+            textToCopy = outputText.value;
+            if (!textToCopy || textToCopy.includes('...')) {
+                // 如果没有预览文本，尝试从markdown生成
+                const markdown = markdownInput.value.trim();
+                textToCopy = markdown.replace(/[#*`\[\]()]/g, '').trim();
+            }
+        }
+        
+        if (!textToCopy) {
+            showNotification('⚠️ 没有可复制的内容', 'error');
+            return;
+        }
+        
+        // 使用现代Clipboard API
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(textToCopy);
+            showNotification('✅ 已复制到剪贴板');
+        } else {
+            // 降级方案：使用传统方法
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showNotification('✅ 已复制到剪贴板');
+            } catch (err) {
+                showNotification('❌ 复制失败，请手动选择复制', 'error');
+            }
+            document.body.removeChild(textarea);
+        }
+    } catch (error) {
+        console.error('复制错误:', error);
+        showNotification('❌ 复制失败: ' + error.message, 'error');
+    }
+});
 
 // 下载功能
 downloadBtn.addEventListener('click', () => {

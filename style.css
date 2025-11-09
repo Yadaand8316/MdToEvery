@@ -631,6 +631,30 @@ main {
     text-align: center;
 }
 
+.action-buttons-group {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.action-buttons-group .btn {
+    min-width: 120px;
+}
+
+@media (max-width: 768px) {
+    .action-buttons-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .action-buttons-group .btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
 footer {
     background: var(--apple-bg-tertiary);
     padding: var(--spacing-xl) var(--spacing-2xl);

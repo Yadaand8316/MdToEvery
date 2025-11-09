@@ -1,11 +1,14 @@
-# 📝 Markdown转换工具
+# 📝 Markdown转换工具 - AI内容分享神器
 
-一个简单易用的Web工具，将AI生成的Markdown内容转换为TXT、Word等格式，方便分享。
+> 将ChatGPT、Claude等AI工具生成的Markdown内容一键转换为Word/TXT，解决分享格式问题
 
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-blue)
+![Stars](https://img.shields.io/github/stars/RiverXue/MdToEvery?style=social)
 
 🌐 **在线访问**：[https://riverxue.github.io/MdToEvery/](https://riverxue.github.io/MdToEvery/)
+
+**关键词**：markdown转word | markdown转txt | chatgpt内容分享 | ai内容转换 | 去除markdown语法
 
 ## 💡 解决什么问题？
 
@@ -128,10 +131,6 @@ MIT License - 自由使用和修改
 
 - 🔗 在线地址：https://riverxue.github.io/MdToEvery/
 - ⭐ GitHub：https://github.com/RiverXue/MdToEvery
-
-## 🏷️ 相关标签
-
-`markdown` `converter` `ai-tools` `chatgpt` `word-converter` `markdown-to-word` `markdown-to-txt` `web-tool` `frontend` `javascript`
 
 ---
 

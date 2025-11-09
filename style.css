@@ -13,7 +13,7 @@
     --apple-green-hover: #30D158;
     --apple-red: #FF3B30;
     --apple-orange: #FF9500;
-    --apple-purple: #AF52DE;
+    --apple-cyan: #5AC8FA;
     
     /* 灰度系统 - 苹果的精确灰度 */
     --apple-gray-50: #FBFBFD;
@@ -77,8 +77,8 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', 'Microsoft YaHei', sans-serif;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 122, 255, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(175, 82, 222, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 20% 50%, rgba(90, 200, 250, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(90, 200, 250, 0.03) 0%, transparent 50%),
         linear-gradient(180deg, var(--apple-bg-secondary) 0%, var(--apple-bg-tertiary) 100%);
     min-height: 100vh;
     padding: var(--spacing-lg);
@@ -120,9 +120,9 @@ body {
 header {
     background: 
         linear-gradient(135deg, 
-            rgba(0, 122, 255, 0.08) 0%, 
-            rgba(88, 86, 214, 0.08) 50%,
-            rgba(175, 82, 222, 0.08) 100%);
+            rgba(90, 200, 250, 0.08) 0%, 
+            rgba(0, 122, 255, 0.08) 50%,
+            rgba(0, 199, 190, 0.08) 100%);
     backdrop-filter: blur(40px) saturate(200%);
     -webkit-backdrop-filter: blur(40px) saturate(200%);
     padding: var(--spacing-3xl) var(--spacing-2xl);
@@ -139,7 +139,7 @@ header::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(0, 122, 255, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(90, 200, 250, 0.06) 0%, transparent 70%);
     animation: pulse 20s ease-in-out infinite;
     pointer-events: none;
 }
@@ -159,9 +159,9 @@ header h1 {
     z-index: 1;
     line-height: 1.1;
     background: linear-gradient(135deg, 
-        var(--apple-blue) 0%, 
-        #5856D6 50%,
-        var(--apple-purple) 100%);
+        #5AC8FA 0%, 
+        var(--apple-blue) 50%,
+        #00C7BE 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -269,30 +269,47 @@ main {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--apple-blue) 0%, #0051D5 100%);
+    background: linear-gradient(135deg, #5AC8FA 0%, var(--apple-blue) 100%);
     color: var(--apple-text-white);
     box-shadow: 
-        0 2px 8px rgba(0, 122, 255, 0.25),
-        0 1px 3px rgba(0, 122, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border: 0.5px solid rgba(255, 255, 255, 0.1);
+        0 4px 12px rgba(90, 200, 250, 0.35),
+        0 2px 6px rgba(90, 200, 250, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    pointer-events: none;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--apple-blue-hover) 0%, #003D9E 100%);
+    background: linear-gradient(135deg, #6DD3FF 0%, #1A8FFF 100%);
     transform: translateY(-2px);
-    box-shadow: 
-        0 6px 16px rgba(0, 122, 255, 0.35),
-        0 2px 6px rgba(0, 122, 255, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        box-shadow: 
+        0 8px 20px rgba(90, 200, 250, 0.45),
+        0 4px 10px rgba(90, 200, 250, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 
-        0 2px 6px rgba(0, 122, 255, 0.25),
-        0 1px 3px rgba(0, 122, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #4AB8E8 0%, #0066CC 100%);
+        box-shadow: 
+        0 2px 6px rgba(90, 200, 250, 0.35),
+        0 1px 3px rgba(90, 200, 250, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .btn-secondary {
@@ -374,9 +391,9 @@ main {
 
 #markdownInput:focus {
     outline: none;
-    border-color: var(--apple-blue);
+    border-color: #5AC8FA;
     box-shadow: 
-        0 0 0 4px rgba(0, 122, 255, 0.12),
+        0 0 0 4px rgba(90, 200, 250, 0.15),
         inset 0 2px 4px rgba(0, 0, 0, 0.04),
         inset 0 1px 2px rgba(0, 0, 0, 0.02);
     background: var(--apple-bg-primary);
@@ -403,9 +420,9 @@ main {
 }
 
 .output-container:focus-within {
-    border-color: var(--apple-blue);
+    border-color: #5AC8FA;
     box-shadow: 
-        0 0 0 4px rgba(0, 122, 255, 0.12),
+        0 0 0 4px rgba(90, 200, 250, 0.15),
         inset 0 2px 4px rgba(0, 0, 0, 0.04),
         inset 0 1px 2px rgba(0, 0, 0, 0.02);
 }
@@ -525,7 +542,7 @@ main {
 }
 
 .output-preview blockquote {
-    border-left: 4px solid var(--apple-blue);
+    border-left: 4px solid #5AC8FA;
     padding-left: var(--spacing-lg);
     margin: var(--spacing-md) 0;
     color: var(--apple-text-secondary);
@@ -533,14 +550,14 @@ main {
 }
 
 .output-preview a {
-    color: var(--apple-blue);
+    color: #5AC8FA;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all 0.2s var(--ease-out);
 }
 
 .output-preview a:hover {
-    border-bottom-color: var(--apple-blue);
+    border-bottom-color: #5AC8FA;
 }
 
 .output-preview table {
@@ -647,7 +664,7 @@ footer {
     body {
         padding: var(--spacing-sm);
         background: var(--apple-bg-tertiary);
-        -webkit-tap-highlight-color: rgba(0, 122, 255, 0.1);
+        -webkit-tap-highlight-color: rgba(90, 200, 250, 0.15);
     }
 
     .container {
@@ -727,6 +744,10 @@ footer {
     .btn-primary {
         font-weight: 600;
     }
+    
+    .btn-primary::after {
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
 
     .btn-secondary {
         font-weight: 500;
@@ -754,7 +775,7 @@ footer {
 
     #markdownInput:focus {
         box-shadow: 
-            0 0 0 3px rgba(0, 122, 255, 0.15),
+            0 0 0 3px rgba(90, 200, 250, 0.2),
             inset 0 2px 4px rgba(0, 0, 0, 0.04);
     }
 
@@ -889,8 +910,8 @@ footer {
     display: inline-block;
     width: 16px;
     height: 16px;
-    border: 2.5px solid rgba(0, 122, 255, 0.2);
-    border-top: 2.5px solid var(--apple-blue);
+    border: 2.5px solid rgba(90, 200, 250, 0.25);
+    border-top: 2.5px solid #5AC8FA;
     border-radius: 50%;
     animation: spin 0.8s var(--ease-in-out) infinite;
     margin-right: var(--spacing-sm);
@@ -903,18 +924,18 @@ html {
 
 /* 选中文本样式 */
 ::selection {
-    background: rgba(0, 122, 255, 0.25);
+    background: rgba(90, 200, 250, 0.3);
     color: var(--apple-text-primary);
 }
 
 ::-moz-selection {
-    background: rgba(0, 122, 255, 0.25);
+    background: rgba(90, 200, 250, 0.3);
     color: var(--apple-text-primary);
 }
 
 /* 焦点可见性 */
 *:focus-visible {
-    outline: 2px solid var(--apple-blue);
+    outline: 2px solid #5AC8FA;
     outline-offset: 2px;
     border-radius: var(--radius-sm);
 }

